@@ -1,0 +1,45 @@
+Installation
+------------
+
+UNIX-like systems:
+
+cd ~/.vim
+
+unzip /path/to/gedim.zip
+
+vi
+:helptags ~/.vim/doc
+
+
+Windows systems:
+
+Unpack the .zip file and copy the files to your
+gvim or vim configuration directory, then:
+
+vi
+:helptags /path/to/doc
+
+
+Caveat Fenestrae emptor:
+------------------------
+Unfortunately the developers or testers had only limited access to a Windows
+machine.  Please let me know if you had issues using the URL in the next
+section.
+
+
+Comments, questions, bug reports:
+---------------------------------
+
+Eugene Ciurana, http://eugeneciurana.com/contact or http://ciurana.eu/contact
+for your questions.
+
+Project page:  http://eugeneciurana.com/gedim.vim
+
+
+Contributors, license, other information:
+-----------------------------------------
+Use the Force.  See the Source.
+
+The gedim.vim source file features the contributors list and
+version history. 
+

@@ -1,0 +1,12 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3196
+
+My portable computer is my primary workstation. I either use an external, high resolution monitor or its built-in screen, depending on where I am. I often use also someone else's monitors, when I'm working remotely. This forces me to change the graphical Vim editor dimensions for every location where I happen to be. Though not complicated, it's annoying. That's why I wrote this script/Vim auto-command that does the job instead. Just define the desired editor columns and lines for a given resolution, and MacVim will open at that size every time that the same resolution is detected.
+
+Features:
+
+    * User configurable: add as many output device resolutions and editor sizes as desired or needed
+    * MacVim and gVim compatible
+    * Works on OS X, Linux/Gnome, Linux/KDE, and Windows
+    * Unobtrusive; set it up once and forget about it
+
+No more dragging the window corners to resize. No more :set columns=128. Just open Vim and get to work!
