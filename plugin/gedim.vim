@@ -32,6 +32,7 @@
 " ----------            -----                         ---------
 " Eugene Ciurana        http://ciurana.eu/contact     pr3d4t0r
 " Scott Balmos          sbalmos@fastmail.fm           [TechGuy]
+" Nathan Tenney
 "
 " Special thanks to jamessan, spline, dmlloyd, bairu, graywh, and other denizens of the
 " #vim, ##mac, and other channels (irc://irc.freenode.net/#vim).
@@ -40,6 +41,7 @@
 " Version history:
 " ----------------
 " 20100811              1.1  Initial public release.
+" 20100813              1.1b Fixed Windows detection bug based on EOL (\r\n) - by Nathan Tenney
 
 function! GEditorDimensions()
   " Set nColumns, nRows to some reasonable default for your screen.
@@ -66,7 +68,7 @@ function! GEditorDimensions()
     " NEEDS ADDITIONAL TESTING BY A KIND WINDOWS USER!
     let executable   = "wmic desktopmonitor get screenheight, screenwidth /format:csv | find \",\" | find /V \"ScreenHeight\""
     let output       = system(executable)
-    let items        = split(split(output, "\n")[0], ",")
+    let items        = split(split(output, "\r\n")[0], ",")
     let g:rezWindows = items[2].",".items[1]
     let rez          = g:rezWindows
   endif
