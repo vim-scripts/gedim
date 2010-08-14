@@ -32,7 +32,7 @@
 " ----------            -----                         ---------
 " Eugene Ciurana        http://ciurana.eu/contact     pr3d4t0r
 " Scott Balmos          sbalmos@fastmail.fm           [TechGuy]
-" Nathan Tenney
+" Nathan Tenney         ntenney@gmail.com
 "
 " Special thanks to jamessan, spline, dmlloyd, bairu, graywh, and other denizens of the
 " #vim, ##mac, and other channels (irc://irc.freenode.net/#vim).
