@@ -33,6 +33,7 @@
 " Eugene Ciurana        http://ciurana.eu/contact     pr3d4t0r
 " Scott Balmos          sbalmos@fastmail.fm           [TechGuy]
 " Nathan Tenney         ntenney@gmail.com
+" Ludvig Ericson        ludvig@sendpatch.se           lericson
 "
 " Special thanks to jamessan, spline, dmlloyd, bairu, graywh, and other denizens of the
 " #vim, ##mac, and other channels (irc://irc.freenode.net/#vim).
@@ -40,8 +41,11 @@
 "
 " Version history:
 " ----------------
-" 20100811              1.1  Initial public release.
+" 20100903              1.2  Faster screen detection for OS X improvement - by Ludvig Ericson
+"                            Main display detection on MacVim / gVim running on Mac systems with
+"                            multiple displays - EC
 " 20100813              1.1b Fixed Windows detection bug based on EOL (\r\n) - by Nathan Tenney
+" 20100811              1.1  Initial public release.
 
 function! GEditorDimensions()
   " Set nColumns, nRows to some reasonable default for your screen.
@@ -77,11 +81,11 @@ function! GEditorDimensions()
     let rez        = system(executable)
   endif
   if has("gui_macvim")
-    let executable = "/usr/sbin/system_profiler | awk '/Resolution:/ { printf(\"%d,%d\", $2, $4); exit(0); }'"
+    let executable = "/usr/sbin/system_profiler SPDisplaysDataType | awk 'BEGIN { nX = 0; nY = 0; } function pR() { printf(\"%d,%d\", nX, nY); b = 1; } /Resolution:/ { nX = $2; nY = $4; } /Main Display:/ { if (\"Yes\" == $3) pR(); exit(0); } END { if (!b) pR(); }'"
     let rez        = system(executable)
   endif
   if has("gui_mac")
-    let executable = "/usr/sbin/system_profiler | awk '/Resolution:/ { printf(\"%d,%d\", $2, $4); exit(0); }'"
+    let executable = "/usr/sbin/system_profiler SPDisplaysDataType | awk 'BEGIN { nX = 0; nY = 0; } function pR() { printf(\"%d,%d\", nX, nY); b = 1; } /Resolution:/ { nX = $2; nY = $4; } /Main Display:/ { if (\"Yes\" == $3) pR(); exit(0); } END { if (!b) pR(); }'"
     let rez        = system(executable)
   endif
 
