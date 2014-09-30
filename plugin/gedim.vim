@@ -41,6 +41,9 @@
 "
 " Version history:
 " ----------------
+" 20140930              1.2b Tested under Windows Vista and found bugs in the OS service that
+"                            reports screen dimensions; recommendation:  upgrade to Windows 7
+"                            or later versions (Windows 8.1 as of today)
 " 20100903              1.2  Faster screen detection for OS X improvement - by Ludvig Ericson
 "                            Main display detection on MacVim / gVim running on Mac systems with
 "                            multiple displays - EC
@@ -63,7 +66,7 @@ function! GEditorDimensions()
   " The best places to set these up is in .vimrc or .gvimrc - thanks!
 
   if !exists("g:screenDimensions")
-    let g:screenDimensions = { '1920,1080': [ 200, 40 ], '1440,900': [ 160, 24 ] }
+    let g:screenDimensions = { '1920,1080': [ 200, 40 ], '1440,900': [ 160, 24 ], '2880,1800': [ 305, 75 ] }
   endif
 
   " Identify host OS and GUI and set executable, resolution:
